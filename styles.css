@@ -49,7 +49,7 @@ body {
 }
 
 .hero-image {
-  width: min(520px, 90%);
+  width: min(360px, 85%);
   height: auto;
   display: block;
   margin: 2rem auto 0;
@@ -71,6 +71,14 @@ body {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-image {
+    width: min(260px, 80%);
+    margin-top: 1.5rem;
+    border-radius: 16px;
   }
 }
 
