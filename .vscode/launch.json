@@ -5,10 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "safari",
+            "request": "launch",
+            "name": "Launch TimeClockPro in Safari",
+            "url": "file:///Users/hunterfoss/timeclockpro-site-1/index.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "type": "chrome",
             "request": "launch",
-            "name": "Open index.html",
-            "file": "/Users/hunterfoss/timeclockpro-site/index.html"
+            "name": "Launch in Chrome (backup)",
+            "file": "${workspaceFolder}/index.html"
         }
     ]
 }

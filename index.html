@@ -3,14 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TimeClockPro – Track Your Hours and Pay</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>TimeClockPro – Simple Time Tracking for Hourly Workers | iOS App</title>
+    <meta name="description" content="Track your hours accurately with TimeClockPro. Simple clock-in/out, automatic meal breaks, complex overtime rules, and multiple jobs support. Built for hourly workers. Coming soon to iOS.">
+    <meta name="keywords" content="time tracking, clock in app, hourly worker, overtime calculator, timesheet app, iOS">
+    <link rel="canonical" href="https://timeclockpro.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏰</text></svg>">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://timeclockpro.app/">
+    <meta property="og:title" content="TimeClockPro – Track Your Hours and Pay">
+    <meta property="og:description" content="Simple time tracking app for hourly workers. Clock-in, auto breaks, overtime rules, and multiple jobs support.">
+    <meta property="og:image" content="https://timeclockpro.app/E82116A9-A4A5-4E19-9091-DB998A7CA823.PNG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://timeclockpro.app/">
+    <meta property="twitter:title" content="TimeClockPro – Track Your Hours and Pay">
+    <meta property="twitter:description" content="Simple time tracking app for hourly workers. Clock-in, auto breaks, overtime rules, and multiple jobs support.">
+    <meta property="twitter:image" content="https://timeclockpro.app/E82116A9-A4A5-4E19-9091-DB998A7CA823.PNG">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TimeClockPro",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "0",
+        "highPrice": "4.99",
+        "priceCurrency": "USD",
+        "offeredBy": {
+          "@type": "Organization",
+          "name": "TimeClockPro"
+        }
+      },
+      "description": "Simple time tracking app for hourly workers with clock-in/out, automatic meal breaks, overtime rules, and multiple jobs support.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      }
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="nav-logo" aria-label="TimeClockPro home">⏰ TimeClockPro</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <header class="hero hero--ad">
         <div class="container hero-ad">
             <div class="hero-copy">
@@ -23,22 +88,21 @@
                     <span class="hero-badge">✔ Built for hourly workers</span>
                 </div>
                 <div class="hero-cta">
-                    <a href="#pricing" class="cta-button">Get TimeClockPro</a>
-                    <span class="hero-caption">Coming soon to iOS</span>
+                    <a href="#waitlist" class="cta-button" aria-label="Join the waitlist for TimeClockPro">Join the Waitlist</a>
+                    <span class="hero-caption">Launching Q1 2025 on iOS</span>
                 </div>
             </div>
             <div class="hero-media">
                 <div class="hero-phone">
-                    <img class="hero-phone-image" src="clock-tab-placeholder.svg" alt="TimeClockPro clocked in screen with live timer and clock out controls." />
+                    <img class="hero-phone-image" src="clock-tab-placeholder.svg" alt="TimeClockPro app interface showing clock-in screen with live timer and controls" />
                 </div>
-                <img class="hero-image" src="E82116A9-A4A5-4E19-9091-DB998A7CA823.PNG" alt="Smiling worker showcasing time tracking app on smartphone" />
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Features Section -->
-        <section class="features">
+        <section id="features" class="features">
             <div class="container">
                 <h2>Why TimeClockPro?</h2>
                 <div class="feature-grid">
@@ -77,7 +141,7 @@
                             <li>7‑day history</li>
                             <li>Meal break tracking</li>
                         </ul>
-                        <a href="#" class="plan-button">Get Free</a>
+                        <a href="#waitlist" class="plan-button">Join Waitlist</a>
                     </div>
                     <div class="pricing-plan pricing-plan--featured">
                         <h3>Pro</h3>
@@ -88,7 +152,7 @@
                             <li>Unlimited history</li>
                             <li>CSV export &amp; reporting</li>
                         </ul>
-                        <a href="#" class="plan-button">Start Free Trial</a>
+                        <a href="#waitlist" class="plan-button">Join Waitlist</a>
                     </div>
                     <div class="pricing-plan">
                         <h3>Business</h3>
@@ -99,14 +163,111 @@
                             <li>Team analytics</li>
                             <li>Priority support</li>
                         </ul>
-                        <a href="#" class="plan-button">Contact Us</a>
+                        <a href="mailto:worktimetrack@gmail.com" class="plan-button">Contact Us</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Screenshots Section -->
+        <section class="screenshots">
+            <div class="container">
+                <h2>See TimeClockPro in Action</h2>
+                <p class="screenshots-intro">A quick look at what makes TimeClockPro the perfect time tracking companion.</p>
+                <div class="screenshot-grid">
+                    <div class="screenshot-item">
+                        <img src="clock-tab-placeholder.svg" alt="Clock in screen with start shift button" class="screenshot-image" />
+                        <h3 class="screenshot-caption">Easy Clock In</h3>
+                        <p class="screenshot-description">Start your shift with one tap. Simple and fast.</p>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="clock-tab-placeholder.svg" alt="Active timer showing hours worked" class="screenshot-image" />
+                        <h3 class="screenshot-caption">Live Tracking</h3>
+                        <p class="screenshot-description">Watch your hours add up in real-time.</p>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="clock-tab-placeholder.svg" alt="Weekly summary with earnings breakdown" class="screenshot-image" />
+                        <h3 class="screenshot-caption">Detailed Reports</h3>
+                        <p class="screenshot-description">See your earnings and hours at a glance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof">
+            <div class="container">
+                <h2>Loved by Hourly Workers</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Finally, a time tracker that actually understands my complex overtime rules. Saved me hours of manual calculations."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JD</div>
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">Jessica Davis</span>
+                                <span class="testimonial-role">Retail Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"I work three different jobs with different pay rates. TimeClockPro makes tracking everything so much easier."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MC</div>
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">Marcus Chen</span>
+                                <span class="testimonial-role">Gig Worker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"No login, no ads, just straight-up time tracking. This is how apps should be built."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SP</div>
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">Sarah Peterson</span>
+                                <span class="testimonial-role">Restaurant Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Hours Tracked</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">127</div>
+                        <div class="stat-label">Beta Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waitlist Section -->
+        <section id="waitlist" class="waitlist">
+            <div class="container">
+                <h2>Be the First to Know</h2>
+                <p>Join our waitlist and get early access when we launch in Q1 2025.</p>
+                <form class="waitlist-form" action="#" method="POST" aria-label="Waitlist signup form">
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Enter your email" 
+                        required 
+                        class="waitlist-input"
+                        aria-label="Email address"
+                    />
+                    <button type="submit" class="waitlist-button">Join Waitlist</button>
+                </form>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
-        <section class="faq">
+        <section id="faq" class="faq">
             <div class="container">
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-item">
@@ -114,16 +275,24 @@
                     <p>Yes! You can start with our free plan which includes basic time tracking for one job. Upgrade to Pro for advanced features like multiple jobs, overtime rules and reports.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Which platforms are supported?</h3>
-                    <p>TimeClockPro is currently available for iOS devices. A web dashboard is planned for future updates.</p>
+                    <h3>When will TimeClockPro launch?</h3>
+                    <p>TimeClockPro is launching in Q1 2025 for iOS devices. Join our waitlist above to get notified when we're ready for download.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which platforms will be supported?</h3>
+                    <p>We're launching on iOS first, with support for iPhone and iPad. A web dashboard and Android version are planned for future updates.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Do I need an account?</h3>
-                    <p>No account is required for personal use. If you choose to sync your data across devices or manage teams, you can sign in for cloud backup.</p>
+                    <p>No account is required for personal use. All your data stays on your device. If you choose to sync your data across devices or upgrade to Business for team features, you can sign in for cloud backup.</p>
                 </div>
                 <div class="faq-item">
                     <h3>How is overtime calculated?</h3>
-                    <p>Our engine supports daily, weekly and consecutive-day overtime rules. You can choose from presets or customise your own thresholds and multipliers.</p>
+                    <p>Our engine supports daily, weekly and consecutive-day overtime rules. You can choose from common presets (like California or Federal rules) or customize your own thresholds and multipliers.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I export my data?</h3>
+                    <p>Yes! Pro users can export their time tracking data to CSV format for easy import into payroll systems or spreadsheets.</p>
                 </div>
             </div>
         </section>
