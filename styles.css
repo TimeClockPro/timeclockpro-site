@@ -252,6 +252,156 @@ body {
   text-decoration: underline;
 }
 
+/* Ad Concept #1 */
+.ad-page {
+  --ad-bg: #0b0b0c;
+  --ad-panel: #121316;
+  --ad-border: #1c1f24;
+  --ad-accent: #6fe08a;
+  --ad-text: #f8fafc;
+  --ad-muted: #a0a6b1;
+  background-color: var(--ad-bg);
+  color: var(--ad-text);
+  min-height: 100vh;
+  font-family: "Sora", "Inter", sans-serif;
+}
+
+.ad-page .container {
+  max-width: 960px;
+}
+
+.ad-hero {
+  position: relative;
+  padding: 80px 0 96px;
+  text-align: center;
+  background-color: var(--ad-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='%23161a20'/%3E%3C/svg%3E");
+}
+
+.ad-container {
+  display: grid;
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+.ad-phone {
+  width: min(320px, 82vw);
+}
+
+.ad-phone-frame {
+  padding: 14px;
+  border-radius: 36px;
+  background-color: #0e0f12;
+  border: 1px solid var(--ad-border);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  transform: rotate(-1.5deg);
+  animation: adPhoneFloat 1.4s ease-out both;
+}
+
+.ad-phone-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.ad-copy {
+  max-width: 680px;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.ad-kicker {
+  color: var(--ad-accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.ad-page h1 {
+  font-size: clamp(2.25rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.ad-subtext {
+  color: var(--ad-muted);
+  font-size: 1.1rem;
+}
+
+.ad-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.ad-badge {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background-color: var(--ad-panel);
+  border: 1px solid var(--ad-border);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
+}
+
+.ad-cta {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.ad-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  background-color: var(--ad-accent);
+  color: #0b0b0c;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 18px 30px rgba(111, 224, 138, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ad-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 34px rgba(111, 224, 138, 0.35);
+}
+
+.ad-caption {
+  color: var(--ad-muted);
+  font-size: 0.9rem;
+}
+
+@keyframes adPhoneFloat {
+  from {
+    opacity: 0;
+    transform: translateY(18px) rotate(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(-1.5deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .ad-hero {
+    padding: 64px 0 80px;
+  }
+
+  .ad-phone {
+    width: min(280px, 86vw);
+  }
+
+  .ad-badge {
+    font-size: 0.9rem;
+  }
+}
+
 /* Responsive tweaks */
 @media (max-width: 600px) {
   .pricing-plan--featured {
