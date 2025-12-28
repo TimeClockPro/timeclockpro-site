@@ -68,9 +68,9 @@
         <div class="container">
             <a href="index.html" class="nav-logo" aria-label="TimeClockPro home">⏰ TimeClockPro</a>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/faq">FAQ</a></li>
                 <li><a href="support.html">Support</a></li>
             </ul>
         </div>
@@ -88,7 +88,7 @@
                     <span class="hero-badge">✔ Built for hourly workers</span>
                 </div>
                 <div class="hero-cta">
-                    <a href="#waitlist" class="cta-button" aria-label="Join the waitlist for TimeClockPro">Join the Waitlist</a>
+                    <a href="/waitlist" class="cta-button" aria-label="Join the waitlist for TimeClockPro">Join the Waitlist</a>
                     <span class="hero-caption">Launching Q1 2025 on iOS</span>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                             <li>7‑day history</li>
                             <li>Meal break tracking</li>
                         </ul>
-                        <a href="#waitlist" class="plan-button">Join Waitlist</a>
+                        <a href="/waitlist" class="plan-button">Join Waitlist</a>
                     </div>
                     <div class="pricing-plan pricing-plan--featured">
                         <h3>Pro</h3>
@@ -152,7 +152,7 @@
                             <li>Unlimited history</li>
                             <li>CSV export &amp; reporting</li>
                         </ul>
-                        <a href="#waitlist" class="plan-button">Join Waitlist</a>
+                        <a href="/waitlist" class="plan-button">Join Waitlist</a>
                     </div>
                     <div class="pricing-plan">
                         <h3>Business</h3>
@@ -307,5 +307,141 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        // Clean URL routing for better user experience
+        (function() {
+            // Map of clean paths to section IDs
+            const routes = {
+                '/features': 'features',
+                '/pricing': 'pricing',
+                '/faq': 'faq',
+                '/waitlist': 'waitlist'
+            };
+
+            // Convert hash links to clean paths for better UX
+            function initCleanUrls() {
+                // Update all internal hash links to use clean paths
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
+                    const hash = link.getAttribute('href');
+                    const sectionId = hash.substring(1);
+                    if (sectionId && routes['/' + sectionId]) {
+                        link.href = '/' + sectionId;
+                        // Preserve hash for anchor behavior
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const targetId = sectionId;
+                            const target = document.getElementById(targetId);
+                            if (target) {
+                                // Smooth scroll to target
+                                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                // Update URL without hash for cleaner look
+                                history.pushState(null, '', '/' + sectionId);
+                                // Update page title for better UX
+                                updatePageTitle(sectionId);
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function(e) {
+                const path = window.location.pathname;
+                if (path !== '/' && !path.endsWith('index.html') && routes[path]) {
+                    const targetId = routes[path];
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        updatePageTitle(targetId);
+                    }
+                } else if (path === '/' || path.endsWith('index.html')) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    updatePageTitle('');
+                }
+            });
+
+            // Handle initial page load with clean URL
+            function handleInitialRoute() {
+                const path = window.location.pathname;
+                const hash = window.location.hash.substring(1);
+                
+                // Check if we're on index.html or root
+                const isIndexPage = path === '/' || path.endsWith('index.html');
+                
+                if (isIndexPage && hash && routes['/' + hash]) {
+                    // Convert hash to clean URL
+                    const target = document.getElementById(hash);
+                    if (target) {
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            history.replaceState({ section: hash }, '', '/' + hash);
+                            updatePageTitle(hash);
+                        }, 100);
+                    }
+                } else if (!isIndexPage && routes[path]) {
+                    // User accessed clean path from another page - redirect to index with hash
+                    window.location.href = 'index.html#' + routes[path];
+                }
+            }
+
+            // Update page title based on section
+            function updatePageTitle(sectionId) {
+                const titles = {
+                    'features': 'Features – TimeClockPro',
+                    'pricing': 'Pricing – TimeClockPro',
+                    'faq': 'FAQ – TimeClockPro',
+                    'waitlist': 'Join Waitlist – TimeClockPro',
+                    '': 'TimeClockPro – Simple Time Tracking for Hourly Workers | iOS App'
+                };
+                if (titles[sectionId]) {
+                    document.title = titles[sectionId];
+                }
+            }
+
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                // Attach click handlers to clean path links
+                document.querySelectorAll('a[href^="/"]').forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (routes[href]) {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const targetId = routes[href];
+                            const target = document.getElementById(targetId);
+                            if (target) {
+                                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                history.pushState({ section: targetId }, '', href);
+                                updatePageTitle(targetId);
+                            }
+                        });
+                    }
+                });
+                
+                initCleanUrls();
+                handleInitialRoute();
+            });
+
+            // Smooth scroll for any remaining hash links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#main-content' || href === '#') return;
+                    
+                    const targetId = href.substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Convert to clean URL if route exists
+                        if (routes['/' + targetId]) {
+                            history.pushState({ section: targetId }, '', '/' + targetId);
+                            updatePageTitle(targetId);
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
